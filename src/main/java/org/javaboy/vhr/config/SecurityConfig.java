@@ -91,13 +91,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessHandler(new LogoutSuccessHandler(){
                     @Override
                     public void onLogoutSuccess(HttpServletRequest req, HttpServletResponse resp, Authentication authentication) throws IOException, ServletException {
-//                        resp.setContentType("application/json;charset=utf-8");
-//                        RespBean respBean = RespBean.ok("注销成功!");
-//                        ObjectMapper om = new ObjectMapper();
-//                        PrintWriter out = resp.getWriter();
-//                        out.write(om.writeValueAsString(respBean));
-//                        out.flush();
-//                        out.close();
+                        resp.setContentType("application/json;charset=utf-8");
+                        RespBean respBean = RespBean.ok("注销成功!");
+                        ObjectMapper om = new ObjectMapper();
+                        PrintWriter out = resp.getWriter();
+                        out.write(om.writeValueAsString(respBean));
+                        out.flush();
+                        out.close();
                     }
                 })
                 .permitAll()
