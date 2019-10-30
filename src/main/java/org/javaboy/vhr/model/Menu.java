@@ -16,18 +16,10 @@ public class Menu implements Serializable {
     private Object component;
     private String name;
     private String iconCls;
-    private Long parentId;
-    private List<Role> roles;
+    //    private Boolean keepAlive;
+//    private Boolean requireAuth;
+    private Meta meta;
     private List<Menu> children;
-    private MenuMeta meta;
-
-    public MenuMeta getMeta() {
-        return meta;
-    }
-
-    public void setMeta(MenuMeta meta) {
-        this.meta = meta;
-    }
 
     public List<Menu> getChildren() {
         return children;
@@ -37,6 +29,17 @@ public class Menu implements Serializable {
         this.children = children;
     }
 
+    public Meta getMeta() {
+        return meta;
+    }
+
+    public void setMeta(Meta meta) {
+        this.meta = meta;
+    }
+
+    private Integer parentId;
+    private Boolean enabled;
+
     public Long getId() {
         return id;
     }
@@ -45,7 +48,6 @@ public class Menu implements Serializable {
         this.id = id;
     }
 
-    @JsonIgnore
     public String getUrl() {
         return url;
     }
@@ -62,7 +64,6 @@ public class Menu implements Serializable {
         this.path = path;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.OBJECT)
     public Object getComponent() {
         return component;
     }
@@ -87,21 +88,20 @@ public class Menu implements Serializable {
         this.iconCls = iconCls;
     }
 
-    @JsonIgnore
-    public Long getParentId() {
+
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(Long parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 
-    @JsonIgnore
-    public List<Role> getRoles() {
-        return roles;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 }
