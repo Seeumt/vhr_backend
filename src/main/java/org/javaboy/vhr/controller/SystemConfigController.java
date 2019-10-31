@@ -15,7 +15,7 @@ public class SystemConfigController {
     @Autowired
     private MenuService menuService;
     @GetMapping("/menu")
-    public List<Menu> getMenuByHrId() {
-        return menuService.
+    public List<Menu> getMenusByHrId() {
+        return menuService.getMenusByHrId();
     }
 }

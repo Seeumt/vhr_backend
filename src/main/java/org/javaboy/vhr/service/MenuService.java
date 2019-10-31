@@ -10,8 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class MenuService {
-//    @Autowired
-//    private MenuMapper menuMapper;
+    @Autowired
+    private MenuMapper menuMapper;
+
+
+    public List<Menu> getMenusByHrId() {
+        return menuMapper.getMenusByHrId(((Hr) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
+    }
+
 //    public List<Menu> getMenuByHrId1() {
 //        menuMapper.getMenusByHrId((Hr)(SecurityContextHolder.getContext().getAuthentication().getPrincipal().
 //                ));

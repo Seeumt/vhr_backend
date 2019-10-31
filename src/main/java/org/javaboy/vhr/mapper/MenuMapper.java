@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface MenuMapper {
 
-    List<Menu> getMenusByHrId(Integer hrid);
+    List<Menu> getMenusByHrId(Long hrid);
 
 
     void getMenusByHrId(Hr principal);
