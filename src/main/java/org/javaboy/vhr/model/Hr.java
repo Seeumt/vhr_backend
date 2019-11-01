@@ -50,12 +50,11 @@ public class Hr implements UserDetails{
     @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-//        List<GrantedAuthority> authorities = new ArrayList<>();
-//        for (Role role : roles) {
-//            authorities.add(new SimpleGrantedAuthority(role.getName()));
-//        }
-//        return authorities;
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>(roles.size());
+        for (Role role : roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+        return authorities;
     }
     @JsonIgnore
     @Override

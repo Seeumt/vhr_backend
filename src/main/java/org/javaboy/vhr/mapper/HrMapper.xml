@@ -22,4 +22,16 @@
     <select id="loadUserByUsername" resultMap="BaseResultMap">
         select * from hr WHERE username=#{username};
     </select>
+
+    <select id="getRolesByHrId" resultType="org.javaboy.vhr.model.Role">
+        SELECT
+	        r.*
+        FROM
+            role r,
+            hr_role hrr
+        WHERE
+	        hrr.rid = r.id
+	    AND
+	        hrr.hrid = #{id}
+    </select>
 </mapper>

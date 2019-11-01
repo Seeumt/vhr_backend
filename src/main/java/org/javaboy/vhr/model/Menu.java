@@ -20,6 +20,15 @@ public class Menu implements Serializable {
 //    private Boolean requireAuth;
     private Meta meta;
     private List<Menu> children;
+    private List<Role> roles;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 
     public List<Menu> getChildren() {
         return children;
